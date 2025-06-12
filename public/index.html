@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ceeras - Secure Firebase Data Uploader</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">Ceeras</div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#instructions">Instructions</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+      <label class="theme-switch" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section id="home" class="hero">
+      <h1>Securely Upload Your Excel Data to Firebase</h1>
+      <p>Fast, private, and reliable data upload to your Firestore database.</p>
+    </section>
+
+    <section class="upload-container" id="upload-container">
+      <h2>Upload Your Files</h2>
+      <p class="drag-text">Drag and drop your Excel and Firebase files here</p>
+      <h3 class="file-heading">Excel File</h3>
+      <input type="file" id="excel" name="excel" accept=".xlsx" />
+      <p class="file-name" id="excel-file-name"></p>
+      <h3 class="file-heading">Firebase Credentials</h3>
+      <input type="file" id="serviceAccount" name="serviceAccount" accept=".json" />
+      <p class="file-name" id="firebase-file-name"></p>
+      <button id="upload-btn" class="upload-btn">Upload & Convert</button>
+      <div id="progress-bar"></div>
+    </section>
+
+    <div id="loader-container" style="display:none;">
+      <div class="loader-rotating"></div>
+    </div>
+
+    <section id="instructions" class="instructions">
+      <h2>How It Works</h2>
+      <div class="instruction-cards">
+        <div class="instruction-card card1">
+          <h3>Upload Excel File</h3>
+          <p>Select or drag-and-drop your final, verified Excel file (.xlsx).</p>
+          <p>Please double-check your file before uploading.</p>
+          <p>Once uploaded to Firebase through this server, the data cannot be edited or downloaded from this platform.</p>
+        </div>
+        <div class="instruction-card card2">
+          <h3>Upload Firebase Credentials</h3>
+          <p>Upload your Firebase project credentials securely.</p>
+          <p>Ensure credentials are correct and updated.</p>
+          <p>Used only during this upload session.</p>
+        </div>
+        <div class="instruction-card card3">
+          <h3>Secure Data Handling</h3>
+          <p>Your files are processed only in your browser during the session.</p>
+          <p>No data is stored or shared.</p>
+          <p>100% privacy and security guaranteed.</p>
+        </div>
+        <div class="instruction-card card4">
+          <h3>Upload to Firestore Database</h3>
+          <p>Instantly push your Excel data into your Firestore database.</p>
+          <p>Watch real-time upload progress and detailed status updates on your screen.</p>
+          <p>Receive success confirmation after upload.</p>
+          <p>              </p>
+          
+        </div>
+      </div>
+      <p class="privacy-note">We prioritize your data privacy. Please review all files before uploading. No changes or downloads possible after upload.</p>
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Can I edit my data after uploading? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer" hidden>No, please verify your data before uploading.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is my data stored on your servers? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer" hidden>No, we do not store or share your data.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What file formats are supported? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer" hidden>Only .xlsx and .json files are supported.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How long does the upload take? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer" hidden>Usually within seconds depending on file size and connection.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Is the upload secure? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer" hidden>Yes, all processing happens locally in your browser.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Can I use this without Firebase? <span class="arrow">&#9662;</span></button>
+        <div class="faq-answer" hidden>No, Firebase credentials are required for upload.</div>
+      </div>
+    </section>
+
+    <section id="support" class="support">
+      <h2>Need Help?</h2>
+      <p>Contact our support team. Developed by Ceeras.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ceeras. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
